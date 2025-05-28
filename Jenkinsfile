@@ -5,11 +5,6 @@ pipeline {
         NAME = "benisli/${env.SERVICE}"
     }
     stages {
-        stage('Dependecies') {
-            steps {
-                build job: 'gateway', wait: true
-            }
-        }
         stage('Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean package'
